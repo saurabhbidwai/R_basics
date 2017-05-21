@@ -1,0 +1,19 @@
+reversing_one_hot_encoding=function(z){
+  final=c()
+  temp=c()
+  for(i in 1:nrow(z)){
+    temp = c()
+    for(j in 1:ncol(z)){
+      temp=c(temp,z[i,j])
+    }
+    f=max(temp)
+    
+    if(f == -1){
+      final=c(final,NA)
+    }
+    else{
+      final=c(final,f)
+    }
+  }
+  return(final)
+}
